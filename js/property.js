@@ -77,6 +77,17 @@ $(document).ready(function() {
 
     });
 
+    // tab Effect
+    $(function() {
+        $('.tab li').click(function() {
+            var index = $('.tab li').index(this);
+            $('.topicon > div').css('display','none');
+            $('.topicon > div').eq(index).fadeIn("slow");
+            $('.tab li').removeClass('select');
+            $(this).addClass('select')
+        });
+    });
+
     // Ripple Effect
     (function() {
         var ripple, ripples, RippleEffect,loc, cover, coversize, style, x, y, i, num;

@@ -16,7 +16,7 @@ get_header(); // Including header.php ?>
 <main id="main">
     <article id="article" <?php post_class(); ?>>
         <?php get_template_part('homeimg'); // Including homeimg.php ?>
-        <div class="page-sec content-width">
+        <div class="page-sec">
             <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
             <div class="page-area content-wrap">

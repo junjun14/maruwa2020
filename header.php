@@ -26,7 +26,6 @@
                     </div>
                 </a>
 
-                <?php if ( wp_is_mobile() ) : // SP Tablet Only ?>
                 <div class="menu-btn">
                     <button class="btn-open" href="javascript:void(0)" aria-label="Menu"></button>
                 </div>
@@ -34,12 +33,12 @@
                     <div class="menu-layout">
                         <?php wp_nav_menu( array('menu' => 'sp-nav', 'container' => 'nav', 'container_id' => 'nav', 'container_class' => 'main-nav' )); ?>
                         <div class="call-area">
-                            <a href="tel:<?php $tel = esc_html(get_option('com_tel')); $tel = str_replace(array('-', 'ー', '−', '―', '‐'), '', $tel); echo $tel; ?>"><span class="icon-mobile"></span><?php echo get_option( 'blogname' ); ?>に電話する</a>
+                            <a href="tel:<?php $tel = esc_html(get_option('com_tel')); $tel = str_replace(array('-', 'ー', '−', '―', '‐'), '', $tel); echo $tel; ?>"><span class="icon-mobile"></span>マルワサービスに電話する</a>
                         </div>
                     </div>
                 </div>
-                <?php else: // PC Only ?>
+
                 <?php wp_nav_menu( array('menu' => 'pc-nav', 'container' => 'nav', 'container_id' => 'nav', 'container_class' => 'pc-nav', 'menu_class' => 'pc-menu' )); ?>
-                <?php endif; ?>
+
             </div>
         </header>

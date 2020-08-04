@@ -114,11 +114,12 @@ add_filter( 'wp_insert_post_data', 'convert_content' );
 function my_scripts() {
     wp_enqueue_style('mainstyle',esc_url(get_theme_file_uri('style.css')), array(),date('ymdHi',filemtime( get_theme_file_path('style.css'))));
     wp_enqueue_style('litystyle',esc_url(get_theme_file_uri('css/ionicons.min.css')), array(),date('ymdHi',filemtime( get_theme_file_path('css/ionicons.min.css'))));
+    wp_enqueue_style('swiper',esc_url(get_theme_file_uri('css/swiper.min.css')), array('mainstyle'),date('ymdHi',filemtime( get_theme_file_path('css/swiper.min.css'))));
     if ( !is_admin() ) {
         wp_deregister_script('jquery');
         wp_enqueue_script('jquery','https://code.jquery.com/jquery-3.5.1.min.js',array(),null, true);
         wp_enqueue_script('property',esc_url(get_theme_file_uri('/js/property.min.js')), array('jquery'),date('ymdHi',filemtime( get_theme_file_path('/js/property.min.js'))), true);
-//        wp_enqueue_script('swiper',esc_url(get_theme_file_uri('/js/swiper.min.js')), array('property'),date('ymdHi',filemtime( get_theme_file_path('/js/swiper.min.js'))), true);
+        wp_enqueue_script('swiper',esc_url(get_theme_file_uri('/js/swiper.min.js')), array('property'),date('ymdHi',filemtime( get_theme_file_path('/js/swiper.min.js'))), true);
     }
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts', 50 );
