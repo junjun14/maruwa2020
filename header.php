@@ -38,7 +38,7 @@
                     </div>
                 </div>
 
-                <?php wp_nav_menu( array('menu' => 'pc-nav', 'container' => 'nav', 'container_id' => 'nav', 'container_class' => 'pc-nav', 'menu_class' => 'pc-menu' )); ?>
+                <?php wp_nav_menu( array('menu' => 'pc-nav', 'container' => 'nav', 'container_id' => 'nav', 'container_class' => 'pc-menu', 'menu_class' => 'pc-nav' )); ?>
 
             </div>
         </header>

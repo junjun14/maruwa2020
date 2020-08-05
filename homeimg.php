@@ -1,6 +1,15 @@
-<div class="homeimg-wrap">
-    <figure class="home-img">
-        <img width="820" height="615" src="<?php $logopath='/images/maruwa-shop.jpg'; echo esc_url( get_theme_file_uri( $logopath )); echo '?'.date('mdyHi',filemtime( get_theme_file_path( $logopath ))); ?>" class="shop-btn" alt="Maruwa Service">
-    </figure>
+<div class="swiper-container home-container">
+    <div class="swiper-wrapper host-swiper">
+        <?php if( have_rows('home_img_pc') ): ?>
+        <?php while( have_rows('home_img_pc') ): the_row();
+            $image = get_sub_field('home_imgs_pc');
+        ?>
+        <figure class="swiper-slide other-photo">
+            <?php echo wp_get_attachment_image( $image, 'full' ); ?>
+        </figure>
 
+        <?php endwhile; ?>
+        <?php endif; ?>
+    </div>
+    <div class="swiper-pagination"></div>
 </div>

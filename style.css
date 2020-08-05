@@ -67,12 +67,12 @@ body {
 }
 
 a {
-    color: rgb(7, 120, 176);
+    color: rgb(236, 17, 97);
     text-decoration: underline;
 }
 
 a:hover {
-    color: rgb(78, 151, 199);
+    color: rgb(255, 152, 189);
     text-decoration: none;
 }
 
@@ -362,7 +362,7 @@ button{
     background: rgb(236 17 97 / 95%);
 }
 .overlay .menu {
-    margin: 10% auto;
+    margin: 25% auto 10%;
     width: 80%;
 }
 .overlay .menu ul {
@@ -686,23 +686,36 @@ body {
 }
 
 #article {
-    margin: 2em 0 1.6em;
+    padding: 2em 0 3em;
+    position: relative;
+}
+
+body.page:not(.home) #article.page::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    display: block;
+    width: 32%;
+    height: 100%;
+    background: rgb(85 88 99 / 4%);
+    content: "";
 }
 
 h1, #main-logo {
-    font-size: 42px;
+    font-size: 28px;
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 24px;
 }
 
 h3 {
-    font-size: 26px;
+    font-size: 22px;
 }
 
 h4 {
-    font-size: 22px;
+    font-size: 20px;
 }
 
 h5 {
@@ -810,6 +823,7 @@ a.logo {
     justify-content: flex-start;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    font-size: 16px;
 }
 
 .pc-menu ul li {
@@ -827,8 +841,8 @@ a.logo {
     text-decoration: underline;
 }
 
-h1#site-title {
-    margin-bottom: 0.24em;
+#site-title {
+    margin-bottom: 0.32em;
     font-weight: normal;
     font-size: 16px;
 }
@@ -841,10 +855,19 @@ h1#site-title {
 
 }
 
+ul#menu-sp-nav > li > a {
+    display: block;
+    padding: 0.64em;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+
 #breadcrumbs {
-    margin: 1.6em auto 2.4em;
+    margin: 0 auto 2.4em;
     padding: 0 1em;
-    max-width: 1400px;
+    max-width: 1200px;
     width: 100%;
     text-align: right;
 }
@@ -857,6 +880,7 @@ h1#site-title {
 
 }
 
+/*
 .home-img {
     position: relative;
     padding: 0 0 4em 24%;
@@ -878,6 +902,7 @@ h1#site-title {
     background: #ec1161;
     z-index: 0;
 }
+*/
 
 #news {
     padding: 2em 0;
@@ -1285,10 +1310,216 @@ p.contact-desc {
 .com-info {
     position: absolute;
     top: 2.4em;
-    left: -0.4em;
+    right: -1.6em;
     transform: rotate(90deg);
     white-space: nowrap;
 /*    width: 100%;*/
+}
+
+.hero-img-wrap, .hero-photo {
+    position: relative;
+}
+
+.hero-img-wrap {
+    margin-bottom: 5.6em;
+}
+
+.hero-img-wrap::before {
+    position: absolute;
+    bottom: -3em;
+    left: -1em;
+    display: block;
+    width: 10em;
+    height: 10em;
+    background: #ec1161;
+    content: "";
+}
+
+h1#page-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0 1em;
+    width: 100%;
+    color: #fdfdfd;
+    text-align: center;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.hero-photo {
+    padding-top: 56.25%;
+    overflow: hidden;
+}
+
+.hero-photo > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
+.hero-photo::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 50%);
+    content: "";
+}
+
+.content-wrap {
+    z-index: 1;
+    position: relative;
+}
+
+.content-wrap > h2 {
+    margin: 0.8em 0;
+    position: relative;
+}
+
+.content-wrap > h2::after {
+    position: absolute;
+    bottom: -0.2em;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #ec1161;
+    content: "";
+}
+
+.content-wrap > h3 {
+    margin: 0.64em 0;
+    padding: 0 0 0 1em;
+    position: relative;
+}
+
+.content-wrap > h3::after {
+    position: absolute;
+    top: 0.36em;
+    left: 0;
+    display: block;
+    width: 0.6em;
+    height: 0.6em;
+    background: #ff91b9;
+    content: "";
+}
+
+.content-wrap > p {
+    margin: 1.6em 0;
+}
+
+.content-wrap > ul {
+    margin: 1em 0 1.8em;
+}
+
+.content-wrap > p, .content-wrap > ul, .content-wrap > div {
+    color: #5f6367;
+    line-height: 1.7;
+}
+
+.normal-table > table, .normal-table td, .normal-table th {
+    border-collapse: collapse;
+    border: 1px solid #dadada;
+}
+
+.normal-table > table {
+    width: 100%;
+    max-width: 1024px;
+    margin: 2.4em auto 2.4em;
+}
+
+.normal-table td {
+    padding: 0.6em;
+}
+
+.normal-table > table > tbody > tr > td {
+    background: #fff;
+}
+
+.normal-table > table > tbody > tr > td:first-child {
+    background: #ebecec;
+    text-align: center;
+    width: 30%;
+}
+
+.page-map {
+    position: relative;
+    display: block;
+    padding-top: 80%;
+}
+
+.page-map > iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.service-box {
+    margin: 2.6em 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.service-box .wp-block-media-text__content {
+    padding: 1em 0;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+.service-box .wp-block-media-text__media {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+}
+
+.service-box .wp-block-media-text__content, .service-box .wp-block-media-text__media {
+    width: 100%;
+}
+
+.service-box .wp-block-media-text__content h2 {
+    margin: 0.8em 0;
+}
+
+.service-box .wp-block-media-text__media {
+    position: relative;
+    -webkit-box-shadow: 0 2rem 1.5rem -1.5rem rgb(25 59 77 / 24%);
+    box-shadow: 0 2rem 1.5rem -1.5rem rgb(25 59 77 / 24%);
+}
+
+.service-box .wp-block-media-text__media::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #ec1161;
+    content: "";
+}
+
+
+.post-up-day {
+    margin: 3em 0 0;
+    display: block;
+    text-align: right;
 }
 
 /*Contact form 7*/
@@ -1917,6 +2148,34 @@ Style applied on 560px or higher device
         width: calc(96% / 2);
     }
 
+    .hero-photo {
+        padding-top: 32%;
+    }
+
+    .service-box .wp-block-media-text__content h2 {
+        margin: 0 0 0.8em;
+    }
+
+    .service-box .wp-block-media-text__content {
+        padding: 1em 2.4em;
+    }
+
+    .service-box .wp-block-media-text__content, .service-box .wp-block-media-text__media {
+        -webkit-box-ordinal-group: unset;
+        -ms-flex-order: unset;
+        order: unset;
+    }
+
+    .service-box .wp-block-media-text__content, .service-box .wp-block-media-text__media {
+        width: 50%;
+    }
+
+    .has-media-on-the-right {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-flow: row-reverse;
+        flex-flow: row-reverse;
+    }
 }
 
 /****************************************
@@ -1928,8 +2187,33 @@ Style applied on 992px or higher device
 
     }
 
+    h1 {
+        font-size: 42px;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    h3 {
+        font-size: 26px;
+    }
+
+    h4 {
+        font-size: 22px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    body {
+        font-size: 18px;
+    }
+
     .pc-menu {
         display: inline-block;
+        margin: 0 0 0 2.4em;
     }
 
     .menu-btn {
@@ -1977,6 +2261,14 @@ Style applied on 992px or higher device
         margin: 0 0 3em;
     }
 
+    .normal-table > table > tbody > tr > td:first-child {
+        width: 24%;
+    }
+
+    .service-box {
+        margin: 6.4em 0;
+    }
+
 }
 
 /****************************************
@@ -1985,8 +2277,32 @@ Style applied on 992px or higher device
 
 @media all and (min-width: 1024px) {
 
+
+}
+
+/****************************************
+ Style applied on 1201px or higher device
+*****************************************/
+
+@media all and (min-width: 1201px) {
+
     .content-width {
         padding: 0;
+    }
+
+    #breadcrumbs {
+        padding: 0;
+    }
+
+    .hero-img-wrap::before {
+        width: 16em;
+        height: 16em;
+        left: -4em;
+        bottom: -4em;
+    }
+
+    .page-map {
+        padding-top: 40%;
     }
 
 }

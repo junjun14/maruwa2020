@@ -4,7 +4,7 @@
 
         <div class="service-link-box-wrap">
             <div class="service-link-box"><?php // 賃貸仲介 ?>
-                <a class="service-link" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <a class="service-link" href="<?php echo esc_url( home_url( '/service/#rental' ) ); ?>">
                     <figure class="service-img">
                         <img width="640" height="395" src="<?php $imgpath='/images/rental-agency.jpg'; echo esc_url( get_theme_file_uri( $imgpath )); echo '?'.date('mdyHi',filemtime( get_theme_file_path( $imgpath ))); ?>" class="shop-btn" alt="賃貸仲介" loading="lazy">
                     </figure>
@@ -13,7 +13,7 @@
             </div>
 
             <div class="service-link-box"><?php // 賃貸管理 ?>
-                <a class="service-link" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <a class="service-link" href="<?php echo esc_url( home_url( '/service/#manage' ) ); ?>">
                     <figure class="service-img">
                         <img width="640" height="395" src="<?php $imgpath='/images/rental-manage.jpg'; echo esc_url( get_theme_file_uri( $imgpath )); echo '?'.date('mdyHi',filemtime( get_theme_file_path( $imgpath ))); ?>" class="shop-btn" alt="賃貸管理" loading="lazy">
                     </figure>
@@ -22,7 +22,7 @@
             </div>
 
             <div class="service-link-box"><?php // 売買 ?>
-                <a class="service-link" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <a class="service-link" href="<?php echo esc_url( home_url( '/service/#buying' ) ); ?>">
                     <figure class="service-img">
                         <img width="640" height="395" src="<?php $imgpath='/images/buying.jpg'; echo esc_url( get_theme_file_uri( $imgpath )); echo '?'.date('mdyHi',filemtime( get_theme_file_path( $imgpath ))); ?>" class="shop-btn" alt="売買" loading="lazy">
                     </figure>
@@ -31,7 +31,7 @@
             </div>
 
             <div class="service-link-box"><?php // リフォームメンテナンス ?>
-                <a class="service-link" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <a class="service-link" href="<?php echo esc_url( home_url( '/service/#renovation' ) ); ?>">
                     <figure class="service-img">
                         <img width="640" height="395" src="<?php $imgpath='/images/renovation.jpg'; echo esc_url( get_theme_file_uri( $imgpath )); echo '?'.date('mdyHi',filemtime( get_theme_file_path( $imgpath ))); ?>" class="shop-btn" alt="リフォームメンテナンス" loading="lazy">
                     </figure>
@@ -41,7 +41,7 @@
         </div>
 
         <div class="learn-link-wrap">
-            <a class="learn-more-link animation" href="<?php echo esc_url( home_url( '/' ) ); ?>">Learn more</a>
+            <a class="learn-more-link animation" href="<?php echo esc_url( home_url( '/service/' ) ); ?>">Learn more</a>
         </div>
 
     </div>

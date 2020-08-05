@@ -18,7 +18,7 @@ $the_query = new WP_Query( $args );
     <div class="content-width">
     <h2 class="comtitle subtitle-white">Company</h2>
     </div>
-        <div class="swiper-container staff-container">
+        <div class="swiper-container com-container">
             <div class="swiper-wrapper">
                 <?php while ( $the_query -> have_posts()): $the_query -> the_post(); ?>
 

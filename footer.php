@@ -44,8 +44,31 @@
 <?php endif; ?>
 </div>
 <?php wp_footer(); ?>
-<?php if ( is_home() || is_front_page() || is_single()  || is_page(array('home')) ) : // Display other than Home ?>
+<?php if ( is_home() || is_front_page() || is_page(array('home')) ) : // Display other than Home ?>
 <script>
+
+    var promotion = new Swiper('.home-container', {
+        loop: true,
+        speed: 600,
+        autoplay: {
+            delay: 8000,
+            disableOnInteraction: false
+        },
+        slidesPerView: 1.6,
+        spaceBetween: 0,
+        centeredSlides : true,
+        centerInsufficientSlides: true,
+        watchOverflow: true,
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        breakpoints: {
+            767: {
+                slidesPerView: 1,
+                slidesPerView: 1,
+            }
+        }
+    });
 
     var promotion = new Swiper('.staff-container', {
         loop: false,
@@ -69,6 +92,35 @@
             },
             767: {
                 loop: true,
+                slidesPerView: 1,
+                spaceBetween: 8,
+                slidesPerView: 1,
+                centeredSlides : true,
+            }
+        }
+    });
+
+    var promotion = new Swiper('.com-container', {
+        loop: true,
+        speed: 800,
+        autoplay: {
+            delay: 4500,
+            disableOnInteraction: false
+        },
+        slidesPerView: 3,
+        spaceBetween: 16,
+        centeredSlides: false,
+        centerInsufficientSlides: true,
+        watchOverflow: true,
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 2,
+                spaceBetween: 16
+            },
+            767: {
                 slidesPerView: 1,
                 spaceBetween: 8,
                 slidesPerView: 1,
