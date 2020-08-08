@@ -70,6 +70,30 @@
         }
     });
 
+    var promotion = new Swiper('.butulog-container', {
+        loop: true,
+        speed: 600,
+        autoplay: {
+            delay: 8000,
+            disableOnInteraction: false
+        },
+        slidesPerView: 4,
+        spaceBetween: 40,
+        centeredSlides : true,
+        centerInsufficientSlides: true,
+        watchOverflow: true,
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        breakpoints: {
+            767: {
+                slidesPerView: 1.3,
+                spaceBetween: 24,
+                centeredSlides : true,
+            }
+        }
+    });
+
     var promotion = new Swiper('.staff-container', {
         loop: false,
         speed: 800,
@@ -94,7 +118,6 @@
                 loop: true,
                 slidesPerView: 1,
                 spaceBetween: 8,
-                slidesPerView: 1,
                 centeredSlides : true,
             }
         }

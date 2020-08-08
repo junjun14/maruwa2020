@@ -39,6 +39,8 @@
                 </div>
 
                 <?php wp_nav_menu( array('menu' => 'pc-nav', 'container' => 'nav', 'container_id' => 'nav', 'container_class' => 'pc-menu', 'menu_class' => 'pc-nav' )); ?>
-
+                <div class="contact-btn-wrap">
+                    <a class="contact-btn animation" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><span class="icon-mail"></span>お問い合わせ</a>
+                </div>
             </div>
         </header>

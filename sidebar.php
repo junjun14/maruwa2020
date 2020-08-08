@@ -1,5 +1,5 @@
 <aside id="aside" class="sidebar-wrap">
-    <?php /*
+
     <h3 class="aside-title"><span class="icon-folder-open txt-gray"></span>カテゴリ</h3>
     <ul class="archives-list aside-link">
         <?php
@@ -13,7 +13,8 @@
         }
         ?>
     </ul>
-    */?>
+
+    <?php /*
     <h3 class="archives-title">ARCHIVES</h3>
     <ul class="archives-list aside-link">
         <?php // limit=12ヶ月
@@ -30,5 +31,5 @@
         );
         wp_get_archives( $args ); ?>
     </ul>
-
+    */?>
 </aside>
