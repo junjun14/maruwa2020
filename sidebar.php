@@ -1,6 +1,6 @@
 <aside id="aside" class="sidebar-wrap">
 
-    <h3 class="aside-title"><span class="icon-folder-open txt-gray"></span>カテゴリ</h3>
+    <h3 class="aside-title"><span class="icon-folder"></span>カテゴリ</h3>
     <ul class="archives-list aside-link">
         <?php
         $args = array(

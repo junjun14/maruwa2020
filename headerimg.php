@@ -18,7 +18,7 @@
 <?php endif; ?>
 
 <?php if(is_archive() ): ?>
-    <?php the_archive_title( '<h1 id="page-title" class="head-line">','</h1>' ); ?>
+    <?php the_archive_title( '<h1 id="page-title" class="head-line"><span class="icon-folder"></span>','</h1>' ); ?>
 <?php elseif(is_404() ): ?>
     <h1 id="page-title" class="head-line">404 Not Found!!</h1>
 <?php elseif(is_page() ): ?>

@@ -19,7 +19,7 @@ get_header(); // Including header.php ?>
         <div class="page-sec towcolum content-width">
             <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
-            <div class="page-area content-wrap">
+            <div class="post-area page-area content-wrap">
 
                 <div class="modified-date txt-gray">
                     <time class="post-info-day"><span class="icon-clock"></span><?php the_time('Y.m.d') ?></time>
