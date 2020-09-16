@@ -14,6 +14,8 @@
         $query = new WP_Query(array(
             'post_type' => 'post',
             'no_found_rows' => true,
+            'orderby' => 'post_date',
+            'order' => 'DESC',
             'post_status' => 'publish',
             'posts_per_page' => 4,
             'paged' => $paged,
@@ -79,7 +81,7 @@
     </div>
     </div>
         <div class="learn-link-wrap">
-            <a class="learn-more-link white-bg animation" href="<?php echo esc_url( home_url( '/' ) ); ?>">Learn more</a>
+            <a class="learn-more-link white-bg animation" href="<?php echo esc_url( home_url( '/all-news/' ) ); ?>">Learn more</a>
         </div>
     </div>
 </section>

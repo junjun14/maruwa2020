@@ -25,7 +25,7 @@ get_header(); // Including header.php ?>
                 <div class="butulog-management">
 
                 <?php
-                $url = "https://butulog.com/wp-json/wp/v2/property?member=60&per_page=24&_embed";
+                $url = "https://butulog.com/wp-json/wp/v2/property?member=63&per_page=24&_embed";
                 $json = file_get_contents($url);
                 $arr = json_decode($json,true);
                 ?>
@@ -79,7 +79,7 @@ get_header(); // Including header.php ?>
                 </div>
 
                 <div class="learn-link-wrap">
-                    <a class="learn-more-link animation no-icon" href="https://butulog.com/" target="_blank" rel="noopener noreferrer">Learn more</a>
+                    <a class="learn-more-link animation no-icon" href="https://butulog.com/member/maruwa/" target="_blank" rel="noopener">Learn more</a>
                 </div>
 
                 <time class="post-up-day txt-lightgray" datetime="<?php the_modified_date('c'); ?>"><span class="icon-spinner11"></span><?php the_modified_date('Y.m.d'); ?></time>

@@ -22,7 +22,7 @@
                 <?php endif; ?>
                 <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <div id="main-logo">
-                        <img width="180" height="38" src="<?php $logopath='/images/maruwa-logo.svg'; echo esc_url( get_theme_file_uri( $logopath )); echo '?'.date('mdyHi',filemtime( get_theme_file_path( $logopath ))); ?>" class="shop-btn" alt="マルワサービス">
+                        <img width="180" height="38" src="<?php $logopath='/images/maruwa-logo.svg'; echo esc_url( get_theme_file_uri( $logopath )); echo '?'.date('mdyHi',filemtime( get_theme_file_path( $logopath ))); ?>" class="shop-btn" alt="マルワサービス" onselectstart="return false;" onmousedown="return false;">
                     </div>
                 </a>
 

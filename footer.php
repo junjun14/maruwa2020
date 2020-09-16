@@ -4,11 +4,11 @@
     </div>
         <div class="contact-box-area content-width">
             <a class="contact-box animation" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
-                <h3 class="contact-subtitle">お問い合わせ</h3>
+                <h3 class="contact-subtitle"><span class="icon-mail"></span>お問い合わせ</h3>
                 <p class="contact-desc">お気軽にお問い合わせください</p>
             </a>
             <a class="contact-box animation" href="tel:<?php $tel = esc_html(get_option('com_tel')); $tel = str_replace(array('-', 'ー', '−', '―', '‐'), '', $tel); echo $tel; ?>">
-                <h3 class="contact-subtitle"><?php echo esc_html(get_option( 'com_tel' )); ?></h3>
+                <h3 class="contact-subtitle"><span class="icon-phone"></span><?php echo esc_html(get_option( 'com_tel' )); ?></h3>
                 <p class="contact-desc">9:00～18:00（定休日を除く）</p>
             </a>
         </div>
@@ -26,11 +26,21 @@
 <?php endif; ?>
 <footer id="footer">
     <div class="footer-area content-width">
+        <div class="footer-logo">
+            <img width="82" height="67" src="<?php $logopath='/images/maruwa-logo-white.svg'; echo esc_url( get_theme_file_uri( $logopath )); echo '?'.date('mdyHi',filemtime( get_theme_file_path( $logopath ))); ?>" class="maruwa-white" alt="Maruwa" onselectstart="return false;" onmousedown="return false;">
+        </div>
         <div class="com-add">
             <div class="com-desc"><?php echo get_option( 'blogdescription' ); ?></div>
             <div class="com-name poppins"><?php echo get_option( 'blogname' ); ?></div>
             <div class="com-address"><span class="icon-location"></span><?php echo esc_html(get_option( 'com_add' )); ?></div>
             <div class="com-phone"><span class="icon-phone"></span><?php echo esc_html(get_option( 'com_tel' )); ?></div>
+            <div class="com-fax"><span class="icon-file-empty"></span><?php echo esc_html(get_option( 'com_fax' )); ?></div>
+            <div class="com-mail"><span class="icon-mail"></span><?php echo antispambot( "info@maruwa.site" ); ?></div>
+        </div>
+        <div class="housemate-banner-wrap">
+            <a class="housemate-banner-link" href="https://www.housemate.co.jp/" target="_blank" rel="noopener noreferrer">
+                <img width="320" height="60" src="<?php $logopath='/images/housemate.png'; echo esc_url( get_theme_file_uri( $logopath )); echo '?'.date('mdyHi',filemtime( get_theme_file_path( $logopath ))); ?>" class="housemate-banner" alt="ハウスメイト" onselectstart="return false;" onmousedown="return false;">
+            </a>
         </div>
         <?php if ( !is_mobile() ) : // PC Only ?>
         <div class="privacy-policy-link-wrap"><?php the_privacy_policy_link(); ?></div>
@@ -49,13 +59,14 @@
 
     var promotion = new Swiper('.home-container', {
         loop: true,
+        loopAdditionalSlides: 1,
         speed: 600,
         autoplay: {
             delay: 8000,
             disableOnInteraction: false
         },
-        slidesPerView: 1.6,
-        spaceBetween: 0,
+        slidesPerView: 2.5,
+        spaceBetween: 32,
         centeredSlides : true,
         centerInsufficientSlides: true,
         watchOverflow: true,
@@ -63,15 +74,23 @@
             el: '.swiper-pagination',
         },
         breakpoints: {
+            1600: {
+                slidesPerView: 2.2,
+            },
+            1300: {
+                slidesPerView: 1.8,
+                spaceBetween: 24,
+            },
             767: {
                 slidesPerView: 1,
-                slidesPerView: 1,
+                spaceBetween: 0,
             }
         }
     });
 
     var promotion = new Swiper('.butulog-container', {
         loop: true,
+        loopAdditionalSlides: 1,
         speed: 600,
         autoplay: {
             delay: 8000,
@@ -95,7 +114,8 @@
     });
 
     var promotion = new Swiper('.staff-container', {
-        loop: false,
+        loop: true,
+        loopAdditionalSlides: 1,
         speed: 800,
         autoplay: {
             delay: 6000,
@@ -115,7 +135,6 @@
                 spaceBetween: 16
             },
             767: {
-                loop: true,
                 slidesPerView: 1,
                 spaceBetween: 8,
                 centeredSlides : true,
@@ -125,6 +144,7 @@
 
     var promotion = new Swiper('.com-container', {
         loop: true,
+        loopAdditionalSlides: 1,
         speed: 800,
         autoplay: {
             delay: 4500,

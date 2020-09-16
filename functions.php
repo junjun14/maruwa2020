@@ -78,6 +78,7 @@ add_theme_support( 'post-thumbnails' );
 
 // 画像サイズ追加
 add_image_size( 'minimg', 192, 192, true );
+add_image_size( 'homeimg', 715, 242, true );
 
 // カテゴリの説明からPタグを削除する
 remove_filter('term_description', 'wpautop');
@@ -112,7 +113,7 @@ add_filter( 'wp_insert_post_data', 'convert_content' );
 
 // jQueryを読み込む
 function my_scripts() {
-    wp_enqueue_style('mainstyle',esc_url(get_theme_file_uri('style.css')), array(),date('ymdHi',filemtime( get_theme_file_path('style.css'))));
+    wp_enqueue_style('mainstyle',esc_url(get_theme_file_uri('style.min.css')), array(),date('ymdHi',filemtime( get_theme_file_path('style.min.css'))));
     wp_enqueue_style('litystyle',esc_url(get_theme_file_uri('css/ionicons.min.css')), array(),date('ymdHi',filemtime( get_theme_file_path('css/ionicons.min.css'))));
     wp_enqueue_style('swiper',esc_url(get_theme_file_uri('css/swiper.min.css')), array('mainstyle'),date('ymdHi',filemtime( get_theme_file_path('css/swiper.min.css'))));
     if ( !is_admin() ) {
@@ -275,7 +276,7 @@ function page_navigation() {
         'base' => $paginate_base,
         'format' => $paginate_format,
         'total' => $wp_query->max_num_pages,
-        'mid_size' => 3,
+        'mid_size' => 2,
         'current' => ($paged ? $paged : 1),
     ));
     echo '<p class="local-navigation">'."\n".$result."</p>\n";
@@ -317,6 +318,7 @@ add_filter('admin_footer_text', '__return_empty_string');
 function add_contact_info_field( $whitelist_options ) {
     $whitelist_options['general'][] = 'com_add';
     $whitelist_options['general'][] = 'com_tel';
+    $whitelist_options['general'][] = 'com_fax';
     return $whitelist_options;
 }
 add_filter( 'whitelist_options', 'add_contact_info_field' );
@@ -324,6 +326,7 @@ add_filter( 'whitelist_options', 'add_contact_info_field' );
 function regist_contact_info_field() {
     add_settings_field( 'com_add', '住所', 'display_blog_title', 'general' );
     add_settings_field( 'com_tel', '電話番号', 'display_catch_phrase', 'general' );
+    add_settings_field( 'com_fax', 'FAX', 'display_catch_fax', 'general' );
 }
 add_action( 'admin_init', 'regist_contact_info_field' );
 
@@ -341,6 +344,13 @@ function display_catch_phrase() {
 <?php
 }
 
+function display_catch_fax() {
+    $catch_fax = get_option( 'com_fax' );
+?>
+<input name="com_fax" type="text" id="com_fax" value="<?php echo esc_html( $catch_fax ); ?>" class="regular-text">
+<?php
+}
+
 // 住所取得ショートコード
 function comadd() {
     return get_option( 'com_add' );
@@ -352,6 +362,12 @@ function comtel() {
     return get_option( 'com_tel' );
 }
 add_shortcode('comphrone', 'comtel');
+
+// FAX取得ショートコード
+function comfax() {
+    return get_option( 'com_fax' );
+}
+add_shortcode('comfacsimile', 'comfax');
 
 // 見出しフォーマットのカスタマイズ
 function my_tiny_mce_before_init( $init_array ) {

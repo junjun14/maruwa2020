@@ -33,7 +33,7 @@ $the_query = new WP_Query( $args );
                             <?php if ( has_post_thumbnail() ): // アイキャッチがある場合 ?>
                             <?php echo the_post_thumbnail('medium', array('class' => 'staff-img card-img animation')); ?>
                             <?php else: // アイキャッチがない場合 ?>
-                            <img width="640" height="480" src="<?php echo esc_url( get_theme_file_uri( '/images/no-staff.svg' ) ); ?>" alt="No Photo" class="staff-img card-img animation">
+                            <img width="640" height="427" src="<?php echo esc_url( get_theme_file_uri( '/images/no-staff.svg' ) ); ?>" alt="マルワサービススタッフ" class="staff-img card-img animation">
                             <?php endif; ?>
                         </figure>
 

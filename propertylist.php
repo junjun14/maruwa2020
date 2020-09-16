@@ -5,7 +5,7 @@
     <div class="swiper-container butulog-container">
     <div class="swiper-wrapper butulog-wrap">
     <?php
-    $url = "https://butulog.com/wp-json/wp/v2/property?member=60&per_page=12&_embed";
+        $url = "https://butulog.com/wp-json/wp/v2/property?member=63&per_page=12&_embed";
     $json = file_get_contents($url);
     $arr = json_decode($json,true);
     ?>
