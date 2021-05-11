@@ -45,7 +45,7 @@
         <?php if ( !is_mobile() ) : // PC Only ?>
         <div class="privacy-policy-link-wrap"><?php the_privacy_policy_link(); ?></div>
         <?php endif; ?>
-        <div class="copyright">&copy;<?php echo date('Y'); ?> Maruwa service Inc.</div>
+        <div class="copyright">&copy;<?php date_default_timezone_set('Asia/Tokyo'); echo esc_html(date('Y')); ?> Maruwa service Inc.</div>
         <?php // wp_nav_menu( array('menu' => 'footer-menu', 'container' => 'nav', 'container_id' => 'footer-nav', 'container_class' => 'footer-nav' )); ?>
     </div>
 </footer>
@@ -57,7 +57,7 @@
 <?php if ( is_home() || is_front_page() || is_page(array('home')) ) : // Display other than Home ?>
 <script>
 
-    var promotion = new Swiper('.home-container', {
+const swiper1 = new Swiper('.home-container', {
         loop: true,
         loopAdditionalSlides: 1,
         speed: 600,
@@ -65,8 +65,8 @@
             delay: 8000,
             disableOnInteraction: false
         },
-        slidesPerView: 2.5,
-        spaceBetween: 32,
+        slidesPerView: 1,
+        spaceBetween: 0,
         centeredSlides : true,
         centerInsufficientSlides: true,
         watchOverflow: true,
@@ -74,21 +74,21 @@
             el: '.swiper-pagination',
         },
         breakpoints: {
-            1600: {
-                slidesPerView: 2.2,
-            },
-            1300: {
+            767: {
                 slidesPerView: 1.8,
                 spaceBetween: 24,
             },
-            767: {
-                slidesPerView: 1,
-                spaceBetween: 0,
+            1300: {
+                slidesPerView: 2.2,
+            },
+            1600: {
+                slidesPerView: 2.5,
+                spaceBetween: 32,
             }
         }
     });
 
-    var promotion = new Swiper('.butulog-container', {
+    const swiper2 = new Swiper('.butulog-container', {
         loop: true,
         loopAdditionalSlides: 1,
         speed: 600,
@@ -96,8 +96,8 @@
             delay: 8000,
             disableOnInteraction: false
         },
-        slidesPerView: 4,
-        spaceBetween: 40,
+        slidesPerView: 1.3,
+        spaceBetween: 24,
         centeredSlides : true,
         centerInsufficientSlides: true,
         watchOverflow: true,
@@ -106,14 +106,14 @@
         },
         breakpoints: {
             767: {
-                slidesPerView: 1.3,
-                spaceBetween: 24,
+                slidesPerView: 4,
+                spaceBetween: 40,
                 centeredSlides : true,
             }
         }
     });
 
-    var promotion = new Swiper('.staff-container', {
+    const swiper3 = new Swiper('.staff-container', {
         loop: true,
         loopAdditionalSlides: 1,
         speed: 800,
@@ -121,28 +121,28 @@
             delay: 6000,
             disableOnInteraction: false
         },
-        slidesPerView: 3,
-        spaceBetween: 16,
-        centeredSlides: false,
+        slidesPerView: 1,
+        spaceBetween: 8,
+        centeredSlides: true,
         centerInsufficientSlides: true,
         watchOverflow: true,
         pagination: {
             el: '.swiper-pagination',
         },
         breakpoints: {
-            1024: {
-                slidesPerView: 2,
-                spaceBetween: 16
-            },
             767: {
-                slidesPerView: 1,
-                spaceBetween: 8,
-                centeredSlides : true,
+                slidesPerView: 2,
+                spaceBetween: 16,
+                centeredSlides : false,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 16
             }
         }
     });
 
-    var promotion = new Swiper('.com-container', {
+    const swiper4 = new Swiper('.com-container', {
         loop: true,
         loopAdditionalSlides: 1,
         speed: 800,
@@ -150,8 +150,8 @@
             delay: 4500,
             disableOnInteraction: false
         },
-        slidesPerView: 3,
-        spaceBetween: 16,
+        slidesPerView: 1,
+        spaceBetween: 8,
         centeredSlides: false,
         centerInsufficientSlides: true,
         watchOverflow: true,
@@ -159,15 +159,14 @@
             el: '.swiper-pagination',
         },
         breakpoints: {
-            1024: {
-                slidesPerView: 2,
-                spaceBetween: 16
-            },
             767: {
-                slidesPerView: 1,
-                spaceBetween: 8,
-                slidesPerView: 1,
+                slidesPerView: 2,
+                spaceBetween: 16,
                 centeredSlides : true,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 16
             }
         }
     });

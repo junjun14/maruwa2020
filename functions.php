@@ -21,6 +21,9 @@ remove_action('wp_head','wp_oembed_add_host_js');
 remove_action('wp_head','wp_resource_hints',2);
 add_filter( 'comments_open', '__return_false' ); //コメント機能停止
 
+// 自動アップデートの更新通知メール停止
+add_filter( 'auto_plugin_update_send_email', '__return_false' );
+
 // リサイズJPEG圧縮率変更
 //add_filter('wp_editor_set_quality', function($arg){return 90;});
 
@@ -120,7 +123,7 @@ function my_scripts() {
         wp_deregister_script('jquery');
         wp_enqueue_script('jquery','https://code.jquery.com/jquery-3.5.1.min.js',array(),null, true);
         wp_enqueue_script('property',esc_url(get_theme_file_uri('/js/property.min.js')), array('jquery'),date('ymdHi',filemtime( get_theme_file_path('/js/property.min.js'))), true);
-        wp_enqueue_script('swiper',esc_url(get_theme_file_uri('/js/swiper.min.js')), array('property'),date('ymdHi',filemtime( get_theme_file_path('/js/swiper.min.js'))), true);
+        wp_enqueue_script('swiper',esc_url(get_theme_file_uri('/js/swiper-bundle.min.js')), array('property'),date('ymdHi',filemtime( get_theme_file_path('/js/swiper-bundle.min.js'))), true);
     }
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts', 50 );
